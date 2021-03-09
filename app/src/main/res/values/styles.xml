@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="StyleCalculatorNumbers">
+        <item name="android:backgroundTint">#AAA6E2</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="StyleCalculatorSigns">
+        <item name="android:backgroundTint">#928BE9</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>
