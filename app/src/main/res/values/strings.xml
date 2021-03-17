@@ -18,4 +18,6 @@
     <string name="_0">0</string>
     <string name="point">,</string>
     <string name="result">=</string>
+    <string name="NightTheme">Ночная тема</string>
+    <string name="DayTheme">Дневная тема</string>
 </resources>

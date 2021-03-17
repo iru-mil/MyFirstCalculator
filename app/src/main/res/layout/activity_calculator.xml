@@ -5,9 +5,10 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:columnCount="4"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:theme="@style/CalculatorTheme">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/input_output"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,19 +17,16 @@
         android:layout_gravity="fill"
         android:gravity="end"
         android:importantForAutofill="no"
-        android:inputType="number"
-        android:textSize="@dimen/button_text"
-        android:typeface="monospace" />
+        android:inputType="number" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_sign"
         style="@style/StyleCalculatorSigns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/percent"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/percent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_clear"
         style="@style/StyleCalculatorSigns"
         android:layout_width="wrap_content"
@@ -36,138 +34,131 @@
         android:layout_column="1"
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
-        android:text="@string/clear"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/clear" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_div"
         style="@style/StyleCalculatorSigns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/division"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/division" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_7"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_7"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_7" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_8"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_8"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_8" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_9"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_9"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_9" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_mul"
         style="@style/StyleCalculatorSigns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/multiplication"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/multiplication" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_4"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_4"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_4" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_5"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_5"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_5" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_6"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_6"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_6" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_sub"
         style="@style/StyleCalculatorSigns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/subtraction"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/subtraction" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_1"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_1"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_1" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_2"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_2"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_2" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_3"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_3"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_3" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_add"
         style="@style/StyleCalculatorSigns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/addition"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/addition" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_0"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_column="0"
         android:layout_columnSpan="2"
         android:layout_gravity="fill"
-        android:text="@string/_0"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/_0" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_point"
-        style="@style/StyleCalculatorNumbers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/point"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/point" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/button_res"
         style="@style/StyleCalculatorSigns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/result"
-        android:textSize="@dimen/button_text" />
+        android:text="@string/result" />
+
+    <RadioGroup
+        android:id="@+id/radioButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="76dp"
+        android:layout_column="0"
+        android:layout_columnSpan="4"
+        android:layout_gravity="fill">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonNightTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/NightTheme" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/radioButtonDayTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/DayTheme" />
+    </RadioGroup>
 
 </GridLayout>
