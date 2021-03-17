@@ -1,8 +1,5 @@
 package ru.geekbrains.applicationcalculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,16 +10,7 @@ import com.google.android.material.radiobutton.MaterialRadioButton;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
-
-    private static final String NameSharedPreference = "INPUT";
-
-    private static final String appTheme = "APP_THEME";
-
-    private static final int NightTheme = 0;
-    private static final int DayTheme = 1;
-
-
+public class MainActivity extends ThemeActivity {
 
     private Calculator calculator;
     private EditText editText;
@@ -30,52 +18,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setTheme(getAppTheme(R.style.AppThemeLight));
         setContentView(R.layout.activity_main);
         initThemeChooser();
 
         calculator = new Calculator();
         initView();
     }
+
     private void initThemeChooser() {
         initRadioButton(findViewById(R.id.radioButtonNightTheme),
                 NightTheme);
         initRadioButton(findViewById(R.id.radioButtonDayTheme),
                 DayTheme);
         RadioGroup rg = findViewById(R.id.radioButtons);
-        ((MaterialRadioButton)rg.getChildAt(getCodeStyle(DayTheme))).setChecked(true);
+        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(DayTheme))).setChecked(true);
     }
 
-    private void initRadioButton(View button, final int codeStyle){
+    private void initRadioButton(View button, final int codeStyle) {
         button.setOnClickListener(v -> {
             setAppTheme(codeStyle);
             recreate();
         });
-    }
-
-    private int getAppTheme(int codeStyle) {
-        return codeStyleToStyleId(getCodeStyle(codeStyle));
-    }
-
-
-    private int getCodeStyle(int codeStyle){
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
-                MODE_PRIVATE);
-        return sharedPref.getInt(appTheme, codeStyle);
-    }
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
-                MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(appTheme, codeStyle);
-        editor.apply();
-    }
-    private int codeStyleToStyleId(int codeStyle){
-        if (codeStyle == DayTheme) {
-            return R.style.AppThemeLight;
-        }
-        return R.style.AppThemeDark;
     }
 
     private void initView() {
