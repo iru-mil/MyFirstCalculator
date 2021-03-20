@@ -1,17 +1,22 @@
 package ru.geekbrains.applicationcalculator;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioGroup;
+
+import com.google.android.material.radiobutton.MaterialRadioButton;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ThemeActivity {
 
+    private static final int REQUEST_CODE_SETTING_ACTIVITY = 99;
     private Calculator calculator;
     private EditText editText;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +24,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         calculator = new Calculator();
         initView();
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+        if (resultCode == RESULT_OK) {
+            setAppTheme(data.getIntExtra("key", 0));
+            recreate();
+        }
     }
 
     private void initView() {
@@ -46,12 +62,20 @@ public class MainActivity extends AppCompatActivity {
 
     private void initButtonsClickListener() {
 
+        Button buttonSettings = findViewById(R.id.button_settings);
+        buttonSettings.setOnClickListener(v -> {
+            Intent runSettings = new Intent(MainActivity.this,
+                    SettingsActivity.class);
+            startActivityForResult(runSettings, REQUEST_CODE_SETTING_ACTIVITY);
+        });
+
         Button buttonOppositeSign = findViewById(R.id.button_sign);
         buttonOppositeSign.setOnClickListener(v -> {
             if ((calculator.isFirstInput() && editText.getText().toString() == null)) {
                 numberPressed("-");
-            } else
+            } else {
                 editText.setText(String.valueOf(-(Double.parseDouble(editText.getText().toString()))));
+            }
         });
 
         Button buttonAdd = findViewById(R.id.button_add);

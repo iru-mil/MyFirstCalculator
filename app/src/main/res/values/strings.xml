@@ -18,4 +18,9 @@
     <string name="_0">0</string>
     <string name="point">,</string>
     <string name="result">=</string>
+    <string name="NightTheme">Ночная тема</string>
+    <string name="DayTheme">Дневная тема</string>
+    <string name="title">Выбор темы приложения</string>
+    <string name="ready">Готово</string>
+    <string name="button_settings">Настройки</string>
 </resources>

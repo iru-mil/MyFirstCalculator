@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="button_text">20sp</dimen>
-
+    <dimen name="button_text">23sp</dimen>
+    <dimen name="corner_size_rounded">20dp</dimen>
+    <dimen name="corner_size_cut">15dp</dimen>
 </resources>

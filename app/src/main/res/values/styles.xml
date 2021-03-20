@@ -1,13 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="StyleCalculatorNumbers">
+    <style name="CalculatorTheme">
         <item name="android:backgroundTint">#AAA6E2</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:typeface">serif</item>
+        <item name="shapeAppearanceSmallComponent">@style/Widget.Calculator.SmallShapeAppearance
+        </item>
+    </style>
+
+    <style name="Widget.Calculator.SmallShapeAppearance" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/corner_size_rounded</item>
+        <item name="cornerFamilyBottomRight">cut</item>
+        <item name="cornerSizeBottomRight">@dimen/corner_size_cut</item>
+    </style>
+
+    <style name="AppThemeLight" parent="ThemeOverlay.MaterialComponents.Light">
+        <item name="colorPrimary">#AAA6E2</item>
+        <item name="colorAccent">#AAA6E2</item>
+    </style>
+
+    <style name="AppThemeDark" parent="ThemeOverlay.MaterialComponents.Dark">
+        <item name="colorPrimary">@color/cardview_dark_background</item>
+        <item name="colorAccent">@color/cardview_dark_background</item>
     </style>
 
     <style name="StyleCalculatorSigns">
         <item name="android:backgroundTint">#928BE9</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:typeface">normal</item>
+
     </style>
+
 </resources>
