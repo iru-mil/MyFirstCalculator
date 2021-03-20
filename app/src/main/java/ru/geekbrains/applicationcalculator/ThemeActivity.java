@@ -6,11 +6,11 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ThemeActivity extends AppCompatActivity {
-    private static final String NameSharedPreference = "INPUT";
-    private static final String appTheme = "APP_THEME";
+    private static final String NAME_SHARED_PREFERENCE = "INPUT";
+    private static final String APP_THEME = "APP_THEME";
 
-    static final int NightTheme = 0;
-    static final int DayTheme = 1;
+    static final int NIGHT_THEME = 0;
+    static final int DAY_THEME = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,21 +23,21 @@ public class ThemeActivity extends AppCompatActivity {
     }
 
     int getCodeStyle(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
+        SharedPreferences sharedPref = getSharedPreferences(NAME_SHARED_PREFERENCE,
                 MODE_PRIVATE);
-        return sharedPref.getInt(appTheme, codeStyle);
+        return sharedPref.getInt(APP_THEME, codeStyle);
     }
 
     void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference,
+        SharedPreferences sharedPref = getSharedPreferences(NAME_SHARED_PREFERENCE,
                 MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(appTheme, codeStyle);
+        editor.putInt(APP_THEME, codeStyle);
         editor.apply();
     }
 
     private int codeStyleToStyleId(int codeStyle) {
-        if (codeStyle == DayTheme) {
+        if (codeStyle == DAY_THEME) {
             return R.style.AppThemeLight;
         }
         return R.style.AppThemeDark;
